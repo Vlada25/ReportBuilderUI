@@ -8,8 +8,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { RegisterComponent } from './components/modal-components/register/register.component';
 import { LoginComponent } from './components/modal-components/login/login.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TokenInterceptor } from './classes/token-interceptor';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: TokenInterceptor
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

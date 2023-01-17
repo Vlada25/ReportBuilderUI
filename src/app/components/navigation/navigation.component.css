@@ -1,10 +1,14 @@
 nav {
+    background-color: #DCE8FF;
+    box-sizing: border-box;
+    padding: 20px 5% 15px 5%;
+    font-size: 90%;
+}
+
+.nav-block {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #DCE8FF;
-    box-sizing: border-box;
-    padding: 20px 5% 20px 5%;
 }
 
 .nav-container {
@@ -12,15 +16,4 @@ nav {
     flex-direction: row;
     justify-content: right;
     align-items: center;
-}
-
-.nav-container > a {
-    margin-left: 35px;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
-
-.nav-container > a:hover {
-    text-decoration: underline;
 }

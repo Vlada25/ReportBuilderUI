@@ -18,7 +18,7 @@ export class RegisterComponent {
     name: new FormControl<string>('', [
       Validators.required
     ]),
-    middleName: new FormControl<string>('', [
+    patronymic: new FormControl<string>('', [
       Validators.required
     ]),
     login: new FormControl<string>('', [
@@ -53,8 +53,8 @@ export class RegisterComponent {
     return this.form.controls.name as FormControl
   }
 
-  get middleName() {
-    return this.form.controls.middleName as FormControl
+  get patronymic() {
+    return this.form.controls.patronymic as FormControl
   }
 
   get login() {
@@ -82,15 +82,17 @@ export class RegisterComponent {
     {
       surname: this.form.value.surname as string,
       name: this.form.value.name as string,
-      middleName: this.form.value.middleName as string,
+      patronymic: this.form.value.patronymic as string,
       userName: this.form.value.login as string,
       email: this.form.value.email as string,
       password: this.form.value.password as string,
-      confirmPassword: this.form.value.confirmPassword as string
+      confirmPassword: this.form.value.confirmPassword as string,
+      roles: []
     }
 
     this.authService.register(regUser).subscribe( () => {
       this.modalService.close()
+      alert("Регистрация прошла успешно! Теперь нужно войти.")
     })
   }
 }

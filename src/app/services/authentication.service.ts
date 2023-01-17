@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { ILoginUser } from '../models/login-user';
+import { IUser } from '../models/user';
 import { IRegisterUser } from '../models/register-user';
 
 @Injectable({
@@ -10,11 +11,12 @@ import { IRegisterUser } from '../models/register-user';
 export class AuthenticationService {
 
   private token = ''
+  public currentUser: IUser | undefined
   
   constructor(private httpClient: HttpClient) { }
 
   login(loginUser: ILoginUser): Observable<{token: string}> {
-    return this.httpClient.post<{token: string}>('', loginUser)
+    return this.httpClient.post<{token: string}>('https://localhost:7200/api/account/login', loginUser)
       .pipe(
         tap(({token}) => {
           this.setToken(token)
@@ -43,9 +45,18 @@ export class AuthenticationService {
   }
 
   register(registerUser: IRegisterUser): Observable<string> {
-    return this.httpClient.post<string>('', registerUser)
+    return this.httpClient.post<string>('https://localhost:7200/api/account/registration', registerUser)
       .pipe(
         tap(mes => console.log(mes))
+      )
+  }
+
+  getByLogin(login: string): Observable<IUser> {
+    return this.httpClient.get<IUser>('https://localhost:7200/api/users/' + login)
+      .pipe(
+        tap(u => {
+          this.currentUser = u
+        })
       )
   }
 }

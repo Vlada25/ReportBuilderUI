@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
 
+  constructor (private authService: AuthenticationService) {}
+
+  start() {
+    if (this.authService.isAuthorized()){
+
+    }
+    else {
+      alert("Необходимо авторизоваться!")
+    }
+  }
 }

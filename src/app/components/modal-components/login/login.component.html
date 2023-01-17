@@ -1,1 +1,17 @@
-<p>login works!</p>
+<form class="flex-form" [formGroup]="form" (ngSubmit)="submit()">
+    <input class="modal-input" type="text" placeholder="Логин" formControlName="login">
+    <p class="error-message-under-field" *ngIf="login.errors?.['required']">
+        Требуется логин!
+    </p>
+
+    <input class="modal-input" type="password" placeholder="Пароль" formControlName="password">
+    <p class="error-message-under-field" *ngIf="password.errors?.['required']">
+        Требуется пароль!
+    </p>
+    <p class="error-message-under-field" *ngIf="password.errors?.['minlength']">
+        Минимальная длина пароля - 6 символов!
+    </p>
+    
+    <p></p>
+    <button class="btn-with-border" type="submit">Отправить</button>
+</form>

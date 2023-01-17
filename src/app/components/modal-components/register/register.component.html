@@ -1,53 +1,54 @@
 <form class="flex-form" [formGroup]="form" (ngSubmit)="submit()">
-    <input class="modal-input" type="text" placeholder="Surname" formControlName="surname">
+    <input class="modal-input" type="text" placeholder="Фамилия" formControlName="surname">
     <p class="error-message-under-field" *ngIf="surname.errors?.['required']">
-        Surname is required!
+        Требуется фамилия!
     </p>
 
-    <input class="modal-input" type="text" placeholder="Name" formControlName="name">
+    <input class="modal-input" type="text" placeholder="Имя" formControlName="name">
     <p class="error-message-under-field" *ngIf="name.errors?.['required']">
-        Name is required!
+        Требуется имя!
     </p>
 
-    <input class="modal-input" type="text" placeholder="Middle Name" formControlName="middleName">
-    <p class="error-message-under-field" *ngIf="middleName.errors?.['required']">
-        Middle Name is required!
+    <input class="modal-input" type="text" placeholder="Отчество" formControlName="patronymic">
+    <p class="error-message-under-field" *ngIf="patronymic.errors?.['required']">
+        Требуется отчество!
     </p>
 
-    <input class="modal-input" type="text" placeholder="Login" formControlName="login">
+    <input class="modal-input" type="text" placeholder="Логин" formControlName="login">
     <p class="error-message-under-field" *ngIf="login.errors?.['required']">
-        Login is required!
+        Требуется логин!
     </p>
 
-    <input class="modal-input" type="text" placeholder="Email" formControlName="email">
+    <input class="modal-input" type="text" placeholder="E-mail" formControlName="email">
     <p class="error-message-under-field" *ngIf="email.errors?.['required']">
-        Email is required!
+        Требуется адрес электронной почты!
     </p>
     <p class="error-message-under-field" *ngIf="email.errors?.['pattern']">
-        Email is incorrect!
+        Некорректный e-mail!
     </p>
 
-    <input class="modal-input" type="text" placeholder="Password" formControlName="password">
+    <input class="modal-input" type="text" placeholder="Пароль" formControlName="password">
     <p class="error-message-under-field" *ngIf="password.errors?.['required']">
-        Password is required!
+        Требуется пароль!
     </p>
     <p class="error-message-under-field" *ngIf="password.errors?.['minlength']">
-        Password should consist of 6 symbols or more!
+        Минимальная длина пароля - 6 символов!
     </p>
     <p class="error-message-under-field" *ngIf="password.errors?.['pattern']">
-        Password should include at least one digit and one lowercase letter!
+        Пароль должен включать хотя бы одну строчную букву и одну цифру!
     </p>
 
-    <input class="modal-input" type="text" placeholder="Confirm Password" formControlName="confirmPassword">
+    <input class="modal-input" type="text" placeholder="Повтор пароля" formControlName="confirmPassword">
     <p class="error-message-under-field" *ngIf="confirmPassword.errors?.['required']">
-        Confirmed password is required!
+        Требуется повтор пароля!
     </p>
     <p class="error-message-under-field" *ngIf="confirmPassword.errors?.['minlength']">
-        Confirmed password should consist of 6 symbols or more!
+        Минимальная длина пароля - 6 символов!
     </p>
     <p class="error-message-under-field" *ngIf="confirmPassword.errors?.['pattern']">
-        Confirmed password should include at least one digit and one lowercase letter!
+        Пароль должен включать хотя бы одну строчную букву и одну цифру!
     </p>
     
-    <button class="btn-with-border" type="submit">Register</button>
+    <p></p>
+    <button class="btn-with-border" type="submit">Отправить</button>
 </form>
