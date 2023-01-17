@@ -1,0 +1,32 @@
+.home-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+    text-align: center;
+}
+
+.work-principle-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.work-principle-item {
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    border-radius: 7px;
+    padding: 5px 10px;
+    background-color: #DCE8FF;
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
