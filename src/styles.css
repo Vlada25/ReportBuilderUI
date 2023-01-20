@@ -37,3 +37,13 @@ button:hover {
     border: 1px solid #10C9C3;
     border-radius: 5px;
 }
+
+.main-container {
+    width: 90%;
+    margin: 50px 5% 50px 5%;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+    text-align: center;
+}

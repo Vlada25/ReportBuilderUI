@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { AuthenticationService } from './services/authentication.service';
 export class AppComponent {
 
   constructor(
-    private authService: AuthenticationService) {}
+    private authService: AuthenticationService,
+    private router: Router) {}
 
   ngOnInit(): void {
     const potentialToken = localStorage.getItem('token')

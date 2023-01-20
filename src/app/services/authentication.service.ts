@@ -4,6 +4,7 @@ import { Observable, tap } from 'rxjs';
 import { ILoginUser } from '../models/login-user';
 import { IUser } from '../models/user';
 import { IRegisterUser } from '../models/register-user';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,9 @@ export class AuthenticationService {
   private token = ''
   public currentUser: IUser | undefined
   
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router) { }
 
   login(loginUser: ILoginUser): Observable<{token: string}> {
     return this.httpClient.post<{token: string}>('https://localhost:7200/api/account/login', loginUser)
@@ -41,7 +44,7 @@ export class AuthenticationService {
   logOut() {
     this.setToken('')
     localStorage.setItem('token', '')
-    location.reload()
+    this.router.navigate(['/'])
   }
 
   register(registerUser: IRegisterUser): Observable<string> {

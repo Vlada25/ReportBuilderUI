@@ -1,0 +1,11 @@
+<div class="main-container">
+    <h2>Выберите лабораторную</h2>
+
+    <div class="labs-container" *ngIf="labsTemplateService.labsTemplates">
+        <app-choose-lab 
+            style="width: 100%;"
+            *ngFor="let labsTemplate of labsTemplateService.labsTemplates" 
+            [labsTemplate]="labsTemplate">
+        </app-choose-lab>
+    </div>
+</div>
