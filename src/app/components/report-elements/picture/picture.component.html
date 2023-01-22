@@ -1,0 +1,8 @@
+<h4 style="margin: 10px">Рисунок {{ pictureElement?.pictureNumber }} - {{ pictureElement?.text }}</h4>
+
+<form class="flex-form">
+    <input type="file" style="display: none;" #input (change)="onFileUpload($event)">
+    <button type="button" style="margin: 15px 0 10px 25%; width: 50%;" (click)="triggerClick()">Выбрать картинку</button>
+
+    <img *ngIf="imagePreview" [src]="imagePreview" alt="картинка">
+</form>

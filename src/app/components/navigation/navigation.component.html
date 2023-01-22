@@ -1,14 +1,14 @@
 <nav>
     <div *ngIf="!authService.isAuthorized()" class="nav-block">
-        <span style="font-size: 120%;">Здравствуй, пользователь!</span>
+        <span style="font-size: 110%;">Здравствуй, пользователь!</span>
         <div class="nav-container">
-            <button style="margin-right: 20px;" (click)="modalService.open(register)">Регистрация</button>
-            <button (click)="modalService.open(login)">Авторизация</button>
+            <button style="margin-right: 20px; font-size: 90%;" (click)="modalService.open(register)">Регистрация</button>
+            <button style="font-size: 90%;" (click)="modalService.open(login)">Авторизация</button>
         </div>
     </div>
     
     <div *ngIf="authService.isAuthorized()" class="nav-block">
-        <span style="font-size: 120%;">Здравствуй, {{authService.currentUser?.name}} {{authService.currentUser?.surname}}!</span>
+        <span style="font-size: 110%;">Здравствуй, {{authService.currentUser?.name}} {{authService.currentUser?.surname}}!</span>
         <button (click)="authService.logOut()">Выход</button>
     </div>
 

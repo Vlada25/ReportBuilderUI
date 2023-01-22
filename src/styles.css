@@ -22,7 +22,7 @@ button:hover {
 
 .error-message-under-field {
     color: red;
-    font-size: 90%;
+    font-size: 70%;
     margin: 5px 0 5px 5px;
 }
 
@@ -33,9 +33,10 @@ button:hover {
 
 .modal-input {
     margin-top: 15px;
-    padding: 5px 0 5px 5px;
+    padding: 7px 10px;
     border: 1px solid #10C9C3;
     border-radius: 5px;
+    font-size: 80%;
 }
 
 .main-container {
@@ -46,4 +47,11 @@ button:hover {
 h1, h2, h3, h4 {
     font-weight: normal;
     text-align: center;
+}
+
+.a-back {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
 }

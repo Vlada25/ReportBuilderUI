@@ -29,10 +29,5 @@ export class LabsTemplateService {
 
   getLabsDataByLabNumber(labNumber: number | undefined): Observable<ILabData> {
     return this.httpClient.get<ILabData>('https://localhost:7200/api/labsTemplates/data/' + labNumber)
-      .pipe(
-        tap(data => {
-          console.log(data)
-        })
-      )
   }
 }

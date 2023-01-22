@@ -14,6 +14,8 @@ import { TokenInterceptor } from './classes/token-interceptor';
 import { ChooseLabPageComponent } from './pages/choose-lab-page/choose-lab-page.component';
 import { ChooseLabComponent } from './components/choose-lab/choose-lab.component';
 import { BuildingReportPageComponent } from './pages/building-report-page/building-report-page.component';
+import { PictureComponent } from './components/report-elements/picture/picture.component';
+import { TableComponent } from './components/report-elements/table/table.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { BuildingReportPageComponent } from './pages/building-report-page/buildi
     ModalComponent,
     ChooseLabPageComponent,
     ChooseLabComponent,
-    BuildingReportPageComponent
+    BuildingReportPageComponent,
+    PictureComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

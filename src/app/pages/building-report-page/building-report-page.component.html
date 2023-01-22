@@ -1,1 +1,44 @@
-<p>building-report-page works!</p>
+<div class="main-container">
+    <h2>Формирование отчёта</h2>
+
+    <a class="a-back" href="chooseLab">Назад</a>
+
+    <form class="flex-form" [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="report-element-container">
+        <h4 style="margin: 10px">Персональная информация</h4>
+
+        <input class="modal-input" type="text" placeholder="Инициалы студента" formControlName="studentName">
+        <p class="error-message-under-field" *ngIf="studentName.errors?.['required']">
+            Требуются инициалы студента!
+        </p>
+
+        <input class="modal-input" type="text" placeholder="Инициалы преподавателя" formControlName="teacherName">
+        <p class="error-message-under-field" *ngIf="teacherName.errors?.['required']">
+            Требуются инициалы преподавателя!
+        </p>
+
+        <input class="modal-input" type="text" placeholder="Группа" formControlName="group">
+        <p class="error-message-under-field" *ngIf="group.errors?.['required']">
+            Требуется группа!
+        </p>
+    </div>
+
+    <div class="report-element-container" *ngIf="currentLab?.pictureElements">
+        <app-picture
+            *ngFor="let picture of currentLab?.pictureElements" 
+            [pictureElement]="picture">
+        </app-picture>
+    </div>
+
+    <div class="report-element-container" *ngIf="currentLab?.tableElements">
+        <app-table
+            *ngFor="let table of currentLab?.tableElements" 
+            [tableElement]="table">
+        </app-table>
+    </div>
+
+    <button style="width: 50%; margin: 40px 0 10px 25%" type="submit">Отправить</button>
+
+    </form>
+</div>
