@@ -1,0 +1,18 @@
+.div-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-cols {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 0px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+}

@@ -58,7 +58,8 @@ export class BuildingReportPageComponent implements OnInit{
         studentFullName: this.form.value.studentName as string,
         studentGroup: this.form.value.group as string
       },
-      pictureElements: ReportService.pictures
+      pictureElements: ReportService.pictures,
+      tableElements: ReportService.tables
     })
       .subscribe(response => {
         let filename = "report" + this.labNumber

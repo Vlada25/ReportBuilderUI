@@ -32,16 +32,20 @@ export class PictureComponent {
 
     this.reportService.createPhotoForReport(file)
       .subscribe(info => {
-        let elem = ReportService.pictures.find(x => x.pictureNumber == this.pictureElement?.number)
+        let elem = ReportService.pictures.find(x => x.pictureNumber == this.pictureElement?.pictureNumber)
         if (elem != null){
           let index = ReportService.pictures.indexOf(elem as IPictureElementRequest)
-          delete ReportService.pictures[index]
+          ReportService.pictures[index] = {
+            pictureNumber: this.pictureElement?.pictureNumber,
+            fileName: info.fileName
+          }
         }
-        
-        ReportService.pictures?.push({
-          pictureNumber: this.pictureElement?.number,
-          fileName: info.fileName
-        })
+        else {
+          ReportService.pictures?.push({
+            pictureNumber: this.pictureElement?.pictureNumber,
+            fileName: info.fileName
+          })
+        }
       })
   }
 }

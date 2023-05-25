@@ -4,6 +4,7 @@ import { Observable, tap } from 'rxjs';
 import { IPictureInfo } from '../models/picture-info';
 import { IPictureElementRequest } from '../models/requests/picture-element-request';
 import { IReportRequest } from '../models/requests/report-request';
+import { ITableElementRequest } from '../models/requests/table-element-request';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import { IReportRequest } from '../models/requests/report-request';
 export class ReportService {
 
   static pictures: IPictureElementRequest[] = []
+  static tables: ITableElementRequest[] = []
 
   constructor(private httpClient: HttpClient) { }
 

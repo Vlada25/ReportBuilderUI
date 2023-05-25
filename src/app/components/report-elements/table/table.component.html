@@ -1,1 +1,26 @@
 <h4 style="margin: 10px">Таблица {{ tableElement?.tableNumber }} - {{ tableElement?.text }}</h4>
+
+<div class="div-rows" *ngIf="tableElement?.verticalTitles">
+    <div class="div-cols" *ngFor="let rowItem of fakeRowsElems">
+        <input type="text" [value]="titles[rowItem]" [style]="inputWidth" readonly/>
+        <input *ngFor="let colItem of fakeColsElems"
+            id="{{tableElement?.tableNumber}}.{{rowItem}}.{{colItem}}"
+            [style]="inputWidth"/>
+    </div>
+</div>
+
+<div class="div-rows" *ngIf="tableElement?.horizontalTitles">
+    <div class="div-cols">
+        <input type="text" *ngFor="let colItem of fakeColsElems"
+            [value]="titles[colItem]" 
+            [style]="inputWidth" 
+            readonly/>
+    </div>
+    <div class="div-cols" *ngFor="let rowItem of fakeRowsElems">
+        <input *ngFor="let colItem of fakeColsElems"
+            id="{{tableElement?.tableNumber}}.{{rowItem}}.{{colItem}}"
+            [style]="inputWidth"/>
+    </div>
+</div>
+
+<button type="button" style="margin: 15px 0 10px 25%; width: 50%;" (click)="submit()">Подтвердить</button>
